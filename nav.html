@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            width: 2000px;
+        }
+        nav{
+            top: 0;
+            width: 10%;
+            /* border: 1px solid blue; */
+            position: fixed;
+            background-color: transparent;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul{
+            list-style: none;
+             display: flex;
+             height: 100vh;
+             width: 9%;
+             justify-content: space-around;
+             flex-direction:column;
+             /* border: 1px solid red; */
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color:black;
+            font-size: 22px;
+        }
+
+        .content{
+            margin-top: 30px;
+        }
+
+        .content div 
+        {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        nav.scrolled{
+            background-color:rgb(117, 117, 117);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+            <li><a href="#section4">Section 4</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="Section1">Content for Section 1</div>
+        <div id="Section1">Content for Section 2</div>
+        <div id="Section1">Content for Section 3</div>
+        <div id="Section1">Content for Section 4</div>
+    </div>
+
+    <script>
+        document.addEventListener('scroll',()=>{
+            const navbar = document.getElementById('navbar');
+
+            if (window.scrollX>50) {
+                navbar.classList.add('scrolled');
+                // navbar.style.backgroundColor='red'
+            }
+            else{
+                navbar.classList.remove('scrolled')
+            }
+        })
+    </script>
+</body>
+</html>
